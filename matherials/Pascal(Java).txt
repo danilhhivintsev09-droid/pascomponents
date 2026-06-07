@@ -1,0 +1,117 @@
+ public static String psl(String text) {
+        String alph = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String result = "";
+        List<String> out = new ArrayList<>();
+        String txt = text.toUpperCase();
+
+        String per = "";
+        String res = "";
+        String outn = "";
+
+        for (int i = 0; i < txt.length(); i++) {
+            char currentChar = txt.charAt(i);
+            String charStr = String.valueOf(currentChar);
+
+            if (alph.contains(charStr)) {
+                per = "";
+                String period1 = "АБВГ,";
+                String period2 = "ДЕЖЗ.";
+                String period3 = "ИЙКЛ-";
+                String period4 = "МНОП!";
+                String period5 = "РСТУ?";
+                String period6 = "ФХЦЧ:";
+                String period7 = "ШЩЪЫ;";
+                String period8 = "ЬЭЮЯ";
+                String period9 = "ABCD";
+                String period10 = "EFGH";
+                String period11 = "IJKL";
+                String period12 = "MNOP";
+                String period13 = "QRST";
+                String period14 = "UVWX";
+                String period15 = "YZ";
+                if (period1.contains(charStr)) {
+                    per = "1";
+                }
+                if (period2.contains(charStr)) {
+                    per = "2";
+                }
+                if (period3.contains(charStr)) {
+                    per = "3";
+                }
+                if (period4.contains(charStr)) {
+                    per = "4";
+                }
+                if (period5.contains(charStr)) {
+                    per = "5";
+                }
+                if (period6.contains(charStr)) {
+                    per = "6";
+                }
+                if (period7.contains(charStr)) {
+                    per = "7";
+                }
+                if (period8.contains(charStr)) {
+                    per = "8";
+                }
+                if (period9.contains(charStr)) {
+                    per = "9";
+                }
+                if (period10.contains(charStr)) {
+                    per = "10";
+                }
+                if (period11.contains(charStr)) {
+                    per = "11";
+                }
+                if (period12.contains(charStr)) {
+                    per = "12";
+                }
+                if (period13.contains(charStr)) {
+                    per = "13";
+                }
+                if (period14.contains(charStr)) {
+                    per = "14";
+                }
+                if (period15.contains(charStr)) {
+                    per = "15";
+                }
+            }
+            if (currentChar == 'А' || currentChar == 'Д' || currentChar == 'И' || currentChar == 'М' || currentChar == 'Р' || currentChar == 'Ф' || currentChar == 'Ш' || currentChar == 'Ь' || currentChar == 'A' || currentChar == 'E' || currentChar == 'I' || currentChar == 'M' || currentChar == 'Q' || currentChar == 'U' || currentChar == 'Y') {
+                res = per + "11";
+            }
+            if (currentChar == 'Б' || currentChar == 'Е' || currentChar == 'Й' || currentChar == 'Н' || currentChar == 'С' || currentChar == 'Х' || currentChar == 'Щ' || currentChar == 'Э' || currentChar == 'B' || currentChar == 'F' || currentChar == 'J' || currentChar == 'N' || currentChar == 'R' || currentChar == 'V' || currentChar == 'Z') {
+                res = per + "121";
+            }
+            if (currentChar == 'В' || currentChar == 'Ж' || currentChar == 'К' || currentChar == 'О' || currentChar == 'Т' || currentChar == 'Ц' || currentChar == 'Ъ' || currentChar == 'Ю' || currentChar == 'C' || currentChar == 'G' || currentChar == 'K' || currentChar == 'O' || currentChar == 'S' || currentChar == 'W') {
+                res = per + "1331";
+            }
+            if (currentChar == 'Г' || currentChar == 'З' || currentChar == 'Л' || currentChar == 'П' || currentChar == 'У' || currentChar == 'Ч' || currentChar == 'Ы' || currentChar == 'Я' || currentChar == 'D' || currentChar == 'H' || currentChar == 'L' || currentChar == 'P' || currentChar == 'T' || currentChar == 'X') {
+                res = per + "14641";
+            }
+            if (currentChar == ',') {
+                res = "//";
+            }
+            if (currentChar == '.') {
+                res = "S";
+            }
+            if (currentChar == '-') {
+                res = "t";
+            }
+            if (currentChar == '!') {
+                res = "o";
+            }
+            if (currentChar == '?') {
+                res = "q";
+            }
+            if (currentChar == ':') {
+                res = "ss";
+            }
+            if (currentChar == ';') {
+                res = "s//";
+            }
+            result = res;
+            out.add(result);
+            outn = String.join(".", out);
+        }
+        return outn;
+    }
+}
